@@ -1,0 +1,36 @@
+.m-main-nav, .m-second-nav
+  display flex
+  text-align stretch
+  ul
+    display flex
+    align-items stretch
+  li
+    display flex
+    align-items stretch
+    &.is-disable a
+      opacity .5
+  a
+    display flex
+    align-items center
+    text-transform uppercase
+    text-decoration none
+
+.m-main-nav
+  flex 1
+  a
+    line-height 1
+    padding 0 13px
+  .day, .dayname
+    display block
+    text-align center
+  .day
+    font-size 28px
+    font-weight bold
+  .dayname
+    font-size 12px
+
+.m-second-nav
+  a
+    line-height 30px
+    font-weight bold
+    padding 0 20px

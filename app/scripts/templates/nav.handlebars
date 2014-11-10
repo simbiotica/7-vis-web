@@ -1,7 +1,7 @@
 <ul>
   {{#each dates}}
-    <li>
-      <a href="#{{name}}" data-page="{{name}}" {{#unless enabled}}class="is-disabled"{{/unless}}>
+    <li class="{{#if enabled}}is-enble{{else}}is-disable{{/if}}">
+      <a href="#{{name}}" data-page="{{name}}">
         <time datetime="{{datetime}}">
           <span class="day">{{day}}</span>
           <span class="dayname">{{dayname}}</span>

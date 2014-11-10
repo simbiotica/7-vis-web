@@ -51,7 +51,7 @@ define([
 
     checkDisabled: function(e) {
       var $current = $(e.currentTarget);
-      if ($current.hasClass('is-disabled')) {
+      if ($current.closest('li').hasClass('is-disable')) {
         e.preventDefault();
       } else {
         Backbone.Events.trigger('load:page', $current.data('page'));

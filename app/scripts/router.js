@@ -12,11 +12,11 @@ define([
     },
 
     welcome: function() {
-      Backbone.Events.trigger('change:page', 'welcome');
+      Backbone.Events.trigger('page:change', 'welcome');
     },
 
     loadVisualization: function(visualization) {
-      Backbone.Events.trigger('change:page', visualization);
+      Backbone.Events.trigger('page:change', visualization);
     }
 
   });

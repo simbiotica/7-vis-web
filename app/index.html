@@ -11,13 +11,13 @@
       <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body>
+  <body class="theme-1">
 
     <header class="l-header">
-      <nav>
-        <h1><a href="/"><img src="images/7d7v.svg" width="246" height="40"></a></h1>
-        <div id="navView" class="mod-main-nav"></div>
-        <div class="mod-second-nav">
+      <nav class="l-nav">
+        <h1 class="m-brand"><a href="/"><img src="images/7d7v.svg" width="246" height="40"></a></h1>
+        <div id="navView" class="m-main-nav"></div>
+        <div class="m-second-nav">
           <ul>
             <li><a href="#about">About</a></li>
           </ul>
@@ -25,9 +25,13 @@
       </nav>
     </header>
 
-    <section class="l-page" id="welcomePageView"></section>
+    <section class="l-page is-active" id="welcomePageView">
 
-    <section class="l-page" id="firstVisPageView"></section>
+    </section>
+
+    <section class="l-page" id="firstVisPageView">
+      <iframe src="http://simbiotica.es" frameborder="0"></iframe>
+    </section>
 
     <section class="l-page" id="secondVisPageView"></section>
 
