@@ -5,7 +5,7 @@
   "authors": [
     "David Inga <david.inga@simbiotica.es>"
   ],
-  "description": "7 days 7 visualizations",
+  "description": "7 days 7 visualisations",
   "main": "app/scripts/main.js",
   "license": "MIT",
   "private": true,

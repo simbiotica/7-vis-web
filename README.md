@@ -1,7 +1,4 @@
-WPC
-===
-
-Word Park Congress visualisation
+# 7 days 7 visualisations
 
 ## Requeriments
 
