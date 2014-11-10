@@ -1,0 +1,12 @@
+<ul>
+  {{#each dates}}
+    <li class="{{#if enabled}}is-enble{{else}}is-disable{{/if}}">
+      <a href="#{{name}}" data-page="{{name}}">
+        <time datetime="{{datetime}}">
+          <span class="day">{{day}}</span>
+          <span class="dayname">{{dayname}}</span>
+        </time>
+      </a>
+    </li>
+  {{/each}}
+</ul>
