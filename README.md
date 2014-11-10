@@ -1,4 +1,4 @@
-# 7 days 7 visualisations
+# 7 days 7 visualizations
 
 ## Requeriments
 

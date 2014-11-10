@@ -1,7 +1,7 @@
 {
   "name": "7d7v",
   "version": "1.0.0",
-  "description": "7 days 7 visualisations",
+  "description": "7 days 7 visualizations",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "grunt test"

@@ -6,7 +6,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="">
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700">
     <!-- build:css(.tmp) styles/main.css -->
       <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
       <link rel="stylesheet" href="styles/main.css">
@@ -15,14 +14,36 @@
   <body>
 
     <header class="l-header">
-
+      <nav>
+        <h1><a href="/"><img src="images/7d7v.svg" width="246" height="40"></a></h1>
+        <div id="navView" class="mod-main-nav"></div>
+        <div class="mod-second-nav">
+          <ul>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
-    <section class="l-page" id="welcomePage">
+    <section class="l-page" id="welcomePageView"></section>
 
-    </section>
+    <section class="l-page" id="firstVisPageView"></section>
 
-    <script src="../bower_components/requirejs/require.js" data-main="scripts/main"></script>
+    <section class="l-page" id="secondVisPageView"></section>
+
+    <section class="l-page" id="thirthVisPageView"></section>
+
+    <section class="l-page" id="fourthVisPageView"></section>
+
+    <section class="l-page" id="fifthVisPageView"></section>
+
+    <section class="l-page" id="sixthVisPageView"></section>
+
+    <section class="l-page" id="seventhVisPageView"></section>
+
+    <script src="bower_components/requirejs/require.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/main.js"></script>
 
   </body>
 </html>

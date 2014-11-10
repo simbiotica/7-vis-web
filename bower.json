@@ -5,7 +5,7 @@
   "authors": [
     "David Inga <david.inga@simbiotica.es>"
   ],
-  "description": "7 days 7 visualisations",
+  "description": "7 days 7 visualizations",
   "main": "app/scripts/main.js",
   "license": "MIT",
   "private": true,
@@ -24,6 +24,7 @@
     "normalize-css": "~3.0.2",
     "underscore.string": "~2.3.3",
     "text": "~2.0.12",
-    "handlebars": "~2.0.0"
+    "handlebars": "~2.0.0",
+    "moment": "~2.8.3"
   }
 }
