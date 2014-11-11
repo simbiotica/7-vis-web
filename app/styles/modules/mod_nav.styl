@@ -1,17 +1,27 @@
+.m-nav
+  display flex
+  flex 1
+
 .m-main-nav, .m-second-nav
   display flex
   text-align stretch
   ul
     display flex
     align-items stretch
+    width 100%
+    justify-content space-between
   li
     display flex
+    justify-content center
+    flex 1
     align-items stretch
     &.is-disable a
       opacity .5
   a
     display flex
+    width 100%
     align-items center
+    justify-content center
     text-transform uppercase
     text-decoration none
 
@@ -19,7 +29,6 @@
   flex 1
   a
     line-height 1
-    padding 0 13px
   .day, .dayname
     display block
     text-align center

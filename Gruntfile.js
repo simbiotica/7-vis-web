@@ -48,7 +48,8 @@ module.exports = function(grunt) {
           dest: '<%= root.dist %>',
           src: [
             '*.{ico,png,txt}',
-            '{,*/}*.html'
+            '{,*/}*.html',
+            'fonts/*.*'
           ]
         }]
       }
@@ -106,23 +107,17 @@ module.exports = function(grunt) {
     },
 
     requirejs: {
+      options: {
+        baseUrl: '<%= root.app %>/scripts',
+        mainConfigFile: '<%= root.app %>/scripts/config.js',
+        name: '../../bower_components/almond/almond',
+      },
       compile: {
         options: {
-          almond: true,
-          wrap: true,
-          useStrict: true,
-          removeCombined: true,
-          baseUrl: './',
-          mainConfigFile: '<%= root.app %>/scripts/main.js',
-          replaceRequireScript: [{
-            files: ['<%= root.dist %>/index.html'],
-            module: 'main'
-          }],
-          modules: [{name: 'main'}],
-          appDir: '<%= root.app %>/scripts/',
-          dir: '<%= root.dist %>/scripts/',
+          out: '<%= root.dist %>/scripts/main.js',
+          include: 'main'
         }
-      }
+      },
     },
 
     useminPrepare: {

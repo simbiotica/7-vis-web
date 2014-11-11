@@ -1,12 +1,16 @@
-<ul>
+<ul class="m-main-nav">
   {{#each dates}}
-    <li class="{{#if enabled}}is-enble{{else}}is-disable{{/if}}">
-      <a href="#{{name}}" data-page="{{name}}">
+    <li class="{{#if enabled}}is-enable{{else}}is-disable{{/if}}" id="vis{{index}}NavItem">
+      <a href="#{{index}}" data-page="{{index}}">
         <time datetime="{{datetime}}">
-          <span class="day">{{day}}</span>
+          <span class="day">{{index}}</span>
           <span class="dayname">{{dayname}}</span>
         </time>
       </a>
     </li>
   {{/each}}
+</ul>
+
+<ul class="m-second-nav">
+  <li id="aboutNavItem"><a href="#about">About</a></li>
 </ul>

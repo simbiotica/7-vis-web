@@ -1,6 +1,7 @@
 define([
+  'underscore',
   'backbone'
-], function(Backbone) {
+], function(_, Backbone) {
 
   'use strict';
 
@@ -9,6 +10,7 @@ define([
     el: '.l-page',
 
     initialize: function() {
+      this.body = $('body');
       this.$header = $('.l-header');
       this.setListeners();
     },
@@ -18,10 +20,25 @@ define([
     },
 
     onPageChange: function(page) {
+      this.$el.removeClass('is-active');
       if (page === 'welcome') {
+        this.body[0].className = 'welcome-theme';
         this.$header.fadeOut();
-      } else {
+        // this.$el.removeClass('is-active');
+        $('#welcomePageView').addClass('is-active');
+        // $('#welcomePageView').fadeIn();
+      } else if (page === 'about') {
+        this.body[0].className = 'about-theme';
         this.$header.fadeIn();
+        // this.$el.removeClass('is-active');
+        $('#aboutPageView').addClass('is-active');
+        // $('#aboutPageView').fadeIn();
+      } else {
+        this.body[0].className = 'theme-' + page;
+        this.$header.fadeIn();
+        // this.$el.removeClass('is-active');
+        $('#vis' + page + 'PageView').addClass('is-active');
+        // $('#vis' + page + 'PageView').fadeIn();
       }
     }
 

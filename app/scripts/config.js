@@ -3,13 +3,13 @@ require.config({
   baseUrl: 'scripts',
 
   paths: {
-    backbone: '/bower_components/backbone/backbone',
-    underscore: '/bower_components/underscore/underscore',
-    underscoreString: '/bower_components/underscore.string/lib/underscore.string',
-    jquery: '/bower_components/jquery/dist/jquery',
-    handlebars: '/bower_components/handlebars/handlebars',
-    moment: '/bower_components/moment/moment',
-    text: '/bower_components/text/text'
+    backbone: '../../bower_components/backbone/backbone',
+    underscore: '../../bower_components/underscore/underscore',
+    underscoreString: '../../bower_components/underscore.string/lib/underscore.string',
+    jquery: '../../bower_components/jquery/dist/jquery',
+    handlebars: '../../bower_components/handlebars/handlebars',
+    moment: '../../bower_components/moment/moment',
+    text: '../../bower_components/text/text'
   },
 
   shim: {
