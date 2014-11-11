@@ -1,5 +1,36 @@
+// Welcome theme
+.welcome-theme
+  background-color $bg-color-welcome-1
+  color $text-color-welcome-1
+  a
+    color $text-color-welcome-1
+  .btn
+    background-color $bg-color-welcome-2
+
+// About theme
+.about-theme
+  background-color $bg-color-about-1
+  color $text-color-about-1
+  a
+    color $text-color-about-1
+  .l-header
+    background-color $bg-color-about-2
+  .m-main-nav
+    li
+      a
+        color $text-color-about-2
+      &:hover
+        background-color $bg-color-about-1
+        a
+          color $text-color-about-1
+  .m-second-nav
+    .is-current
+      background-color $bg-color-about-1
+
 // Theme 1
 .theme-1
+  background-color $bg-color-1-1
+  color $text-color-1-1
   a
     color $text-color-1-1
   .l-header
@@ -9,3 +40,10 @@
       background-color $bg-color-1-2
       a
         color $text-color-1-2
+  .m-second-nav
+    li:hover
+      background-color $bg-color-1-2
+      a
+        color $text-color-1-2
+    a
+      color $text-color-1-1

@@ -13,12 +13,12 @@ define([
     el: '#navView',
 
     options: {
-      startDate: '2014-11-10',
+      startDate: '2014-11-11',
       days: 7
     },
 
     events: {
-      'click a': 'checkDisabled'
+      'click .m-main-nav a': 'checkDisable'
     },
 
     template: Handlebars.compile(TPL),
@@ -29,6 +29,13 @@ define([
 
     render: function() {
       this.$el.html(this.template({dates: this.dates}));
+      this.$mainNav = $('.m-main-nav');
+      this.$secondNav = $('.m-second-nav');
+      this.setListeners();
+    },
+
+    setListeners: function() {
+      Backbone.Events.on('page:change', this.nagivate, this);
     },
 
     getDates: function() {
@@ -38,10 +45,9 @@ define([
       _.times(this.options.days, function(i) {
         var date = moment(startDate).add(i, 'days');
         result.push({
-          name: date.format('YYYY-MM-DD'),
+          index: i + 1,
           datetime: date.format(),
-          day: date.format('DD'),
-          dayname: date.format('dd'),
+          dayname: date.format('ddd'),
           enabled: now.isSame(date, 'day') || now.isAfter(date, 'day')
         });
       });
@@ -49,12 +55,25 @@ define([
       this.render();
     },
 
-    checkDisabled: function(e) {
+    checkDisable: function(e) {
       var $current = $(e.currentTarget);
       if ($current.closest('li').hasClass('is-disable')) {
         e.preventDefault();
+      }
+    },
+
+    nagivate: function(page) {
+      var startDate = moment(this.options.startDate);
+      if (moment().isBefore(startDate)) {
+        return Backbone.history.navigate('', {
+          trigger: true
+        });
+      }
+      this.$el.find('li').removeClass('is-current');
+      if (page === 'about') {
+        $('#aboutNavItem').addClass('is-current');
       } else {
-        Backbone.Events.trigger('load:page', $current.data('page'));
+        $('#vis' + page + 'NavItem').addClass('is-current');
       }
     }
 
