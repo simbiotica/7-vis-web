@@ -47,7 +47,7 @@ module.exports = function(grunt) {
           cwd: '<%= root.app %>',
           dest: '<%= root.dist %>',
           src: [
-            '*.{ico,png,txt}',
+            '*.{ico,png,txt,xml}',
             '{,*/}*.html',
             'fonts/*.*'
           ]
