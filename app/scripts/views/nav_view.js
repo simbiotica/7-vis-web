@@ -13,7 +13,7 @@ define([
     el: '#navView',
 
     options: {
-      startDate: '2014-11-12 11Z',
+      startDate: '2014-11-12 12:00+11:00',
       days: 7
     },
 
@@ -64,7 +64,8 @@ define([
 
     nagivate: function(page) {
       var startDate = moment(this.options.startDate);
-      if (moment().isBefore(startDate)) {
+      console.log(startDate, moment().isBefore(startDate, 'hour'));
+      if (moment().isBefore(startDate, 'hour')) {
         return Backbone.history.navigate('', {
           trigger: true
         });
