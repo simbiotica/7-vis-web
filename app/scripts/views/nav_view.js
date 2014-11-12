@@ -13,7 +13,7 @@ define([
     el: '#navView',
 
     options: {
-      startDate: '2014-11-12',
+      startDate: '2014-11-12 11Z',
       days: 7
     },
 

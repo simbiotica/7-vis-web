@@ -49,6 +49,7 @@ module.exports = function(grunt) {
           src: [
             '*.{ico,png,txt,xml}',
             '{,*/}*.html',
+            'CNAME',
             'fonts/*.*'
           ]
         }]
