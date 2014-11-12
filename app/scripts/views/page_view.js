@@ -1,13 +1,22 @@
 define([
   'underscore',
-  'backbone'
-], function(_, Backbone) {
+  'backbone',
+  'handlebars',
+  'text!templates/page.handlebars'
+], function(_, Backbone, Handlebars, TPL) {
 
   'use strict';
 
   var PageView = Backbone.View.extend({
 
     el: '.l-page',
+
+    visualizations: {
+      '1': 'http://simbiotica.github.io/protected-areas',
+      '2': 'http://simbiotica.github.io/wpc-twitter'
+    },
+
+    template: Handlebars.compile(TPL),
 
     initialize: function() {
       this.body = $('body');
@@ -20,25 +29,30 @@ define([
     },
 
     onPageChange: function(page) {
-      this.$el.removeClass('is-active');
+      this.$el
+        .removeClass('is-active')
+        .find('iframe').fadeOut(500, function() {
+          $(this).remove();
+        });
       if (page === 'welcome') {
         this.body[0].className = 'welcome-theme';
         this.$header.fadeOut();
-        // this.$el.removeClass('is-active');
         $('#welcomePageView').addClass('is-active');
-        // $('#welcomePageView').fadeIn();
       } else if (page === 'about') {
         this.body[0].className = 'about-theme';
         this.$header.fadeIn();
-        // this.$el.removeClass('is-active');
         $('#aboutPageView').addClass('is-active');
-        // $('#aboutPageView').fadeIn();
       } else {
+        var $current = $('#vis' + page + 'PageView');
         this.body[0].className = 'theme-' + page;
         this.$header.fadeIn();
-        // this.$el.removeClass('is-active');
-        $('#vis' + page + 'PageView').addClass('is-active');
-        // $('#vis' + page + 'PageView').fadeIn();
+        $current
+          .html(this.template({
+            url: this.visualizations[page]
+          }));
+        setTimeout(function() {
+          $current.addClass('is-active');
+        }, 1000);
       }
     }
 

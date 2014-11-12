@@ -16,7 +16,7 @@
 .l-page
   display none
   position absolute
-  top 70
+  top 70px
   bottom 0
   left 0
   right 0
@@ -24,13 +24,17 @@
   transition all 1s ease-in
 
   &#welcomePageView,
-  &#vis1PageView
+  &#vis1PageView,
+  &#vis2PageView
     top 0
 
   &.is-active
     display flex
 
   iframe
+    position absolute
     display block
     width 100%
-    flex 1
+    height 100%
+    top 0
+    left 0

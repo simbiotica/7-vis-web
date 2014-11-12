@@ -57,11 +57,17 @@
   .l-header
     background-color $bg-color-2-1
   .m-main-nav
-    li:hover, li.is-current
-      background-color $bg-color-2-2
-      a
-        color $text-color-2-2
+    li
+      &.is-disable a
+        color $text-color-2-3
+        opacity .5
+      &:hover, &.is-current
+        background-color $bg-color-2-2
+        a
+          color $text-color-2-2
+
   .m-second-nav
+    background-color $bg-color-2-1
     li:hover
       background-color $bg-color-2-2
       a
