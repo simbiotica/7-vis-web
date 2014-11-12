@@ -48,7 +48,7 @@ define([
           index: i + 1,
           datetime: date.format(),
           dayname: date.format('ddd'),
-          enabled: now.isSame(date, 'day') || now.isAfter(date, 'day')
+          enabled: now.isSame(date, 'hour') || now.isAfter(date, 'hour')
         });
       });
       this.dates = result;
@@ -64,7 +64,6 @@ define([
 
     nagivate: function(page) {
       var startDate = moment(this.options.startDate);
-      console.log(startDate, moment().isBefore(startDate, 'hour'));
       if (moment().isBefore(startDate, 'hour')) {
         return Backbone.history.navigate('', {
           trigger: true
