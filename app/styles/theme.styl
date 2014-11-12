@@ -41,7 +41,7 @@
       a
         color $text-color-1-2
   .m-second-nav
-    li:hover
+    li.is-enable:hover
       background-color $bg-color-1-2
       a
         color $text-color-1-2
@@ -61,7 +61,9 @@
       &.is-disable a
         color $text-color-2-3
         opacity .5
-      &:hover, &.is-current
+      &.is-enable:hover
+        background-color $bg-color-2-1
+      &.is-current
         background-color $bg-color-2-2
         a
           color $text-color-2-2
@@ -74,3 +76,61 @@
         color $text-color-2-2
     a
       color $text-color-2-1
+
+// Theme 3
+.theme-3
+  background-color $bg-color-3-3
+  color $text-color-3-1
+  a
+    color $text-color-3-1
+  .l-header
+    background-color $bg-color-3-1
+  .m-main-nav
+    li
+      &.is-disable a
+        color $text-color-3-3
+        opacity .5
+      &.is-current
+        background-color $bg-color-3-2
+        a
+          color $text-color-3-2
+      &.is-enable:hover
+        background-color $bg-color-3-3
+
+  .m-second-nav
+    background-color $bg-color-3-1
+    li:hover
+      background-color $bg-color-3-2
+      a
+        color $text-color-3-2
+    a
+      color $text-color-3-1
+
+// Theme 4
+.theme-4
+  background-color $bg-color-4-2
+  color $text-color-4-1
+  a
+    color $text-color-4-2
+  .l-header
+    background-color $bg-color-4-1
+  .m-main-nav
+    li
+      &.is-disable a
+        color $text-color-4-2
+        opacity .5
+      &.is-current
+        background-color $bg-color-4-2
+        a
+          color $text-color-4-2
+      &.is-enable:hover
+        background-color $bg-color-4-2
+
+  .m-second-nav
+    background-color $bg-color-4-2
+    a
+      color $text-color-4-2
+    li:hover
+      background-color $bg-color-4-3
+      a
+        color $text-color-4-1
