@@ -35,12 +35,12 @@ define([
     },
 
     setListeners: function() {
-      Backbone.Events.on('page:change', this.nagivate, this);
+      Backbone.Events.on('page:change', this.navigate, this);
     },
 
     getDates: function() {
       var result = [];
-      var now = moment();
+      var now = this.getNow();
       var startDate = moment(this.options.startDate);
       _.times(this.options.days, function(i) {
         var date = moment(startDate).add(i, 'days');
@@ -55,6 +55,10 @@ define([
       this.render();
     },
 
+    getNow: function() {
+      return moment();
+    },
+
     checkDisable: function(e) {
       var $current = $(e.currentTarget);
       if ($current.closest('li').hasClass('is-disable')) {
@@ -62,18 +66,20 @@ define([
       }
     },
 
-    nagivate: function(page) {
+    navigate: function(page) {
+      var now = this.getNow();
+      var correctDate = _.isNaN(Number(page)) ? moment(this.options.startDate) : moment(this.options.startDate).add(Number(page) -1, 'days');
       var startDate = moment(this.options.startDate);
-      if (moment().isBefore(startDate, 'hour')) {
-        return Backbone.history.navigate('', {
-          trigger: true
-        });
-      }
-      this.$el.find('li').removeClass('is-current');
-      if (page === 'about') {
-        $('#aboutNavItem').addClass('is-current');
+      if (correctDate.isAfter(now, 'hour') || now.isBefore(startDate, 'hour')) {
+        window.location.hash = '';
       } else {
-        $('#vis' + page + 'NavItem').addClass('is-current');
+        this.$el.find('li').removeClass('is-current');
+        if (page === 'about') {
+          $('#aboutNavItem').addClass('is-current');
+        } else {
+          $('#vis' + page + 'NavItem').addClass('is-current');
+        }
+        Backbone.Events.trigger('page:load', page);
       }
     }
 

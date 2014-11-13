@@ -27,7 +27,7 @@ define([
     },
 
     setListeners: function() {
-      Backbone.Events.on('page:change', this.onPageChange, this);
+      Backbone.Events.on('page:load', this.onPageChange, this);
     },
 
     onPageChange: function(page) {
