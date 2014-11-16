@@ -16,7 +16,7 @@ define([
       '2': 'http://simbiotica.github.io/wpc-twitter',
       '3': 'http://simbiotica.github.io/wpc-bio-data-hobby',
       '4': 'http://saleiva.github.io/EcoHack2012',
-      '5': 'http://dhakelila.github.io/blacksaturday'
+      '5': 'http://dhakelila.github.io/blackSaturday'
     },
 
     template: Handlebars.compile(TPL),
