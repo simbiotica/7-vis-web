@@ -13,7 +13,7 @@ define([
     el: '#navView',
 
     options: {
-      startDate: moment('2014-11-12 08:00+11:00', 'YYYY-MM-DD HH:mm Z'),
+      startDate: moment('2014-11-12 08:00', 'YYYY-MM-DD HH:mm'),
       days: 7
     },
 
@@ -43,7 +43,7 @@ define([
       var now = this.getNow();
       var startDate = this.options.startDate;
       _.times(this.options.days, function(i) {
-        var date = moment(startDate).add(i + 1, 'days');
+        var date = moment(startDate).add(i, 'days');
         result.push({
           index: i + 1,
           datetime: date.format(),
