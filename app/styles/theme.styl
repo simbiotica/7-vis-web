@@ -134,3 +134,32 @@
       background-color $bg-color-4-3
       a
         color $text-color-4-1
+
+// Theme 5
+.theme-5
+  background-color $bg-color-5-2
+  color $text-color-5-1
+  a
+    color $text-color-5-2
+  .l-header
+    background-color $bg-color-5-1
+  .m-main-nav
+    li
+      &.is-disable a
+        color $text-color-5-2
+        opacity .5
+      &.is-current
+        background-color $bg-color-5-2
+        a
+          color $text-color-5-2
+      &.is-enable:hover
+        background-color $bg-color-5-2
+
+  .m-second-nav
+    background-color $bg-color-5-2
+    a
+      color $text-color-5-2
+    li:hover
+      background-color $bg-color-5-3
+      a
+        color $text-color-5-1

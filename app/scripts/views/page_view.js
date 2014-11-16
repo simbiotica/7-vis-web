@@ -15,7 +15,8 @@ define([
       '1': 'http://simbiotica.github.io/protected-areas',
       '2': 'http://simbiotica.github.io/wpc-twitter',
       '3': 'http://simbiotica.github.io/wpc-bio-data-hobby',
-      '4': 'http://saleiva.github.io/EcoHack2012'
+      '4': 'http://saleiva.github.io/EcoHack2012',
+      '5': 'http://dhakelila.github.io/black_saturday'
     },
 
     template: Handlebars.compile(TPL),

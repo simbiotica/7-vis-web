@@ -13,7 +13,7 @@ define([
     el: '#navView',
 
     options: {
-      startDate: '2014-11-12 08:00+11:00',
+      startDate: moment('2014-11-11 08:00+11:00', 'YYYY-MM-DD HH:mm Z'),
       days: 7
     },
 
@@ -41,9 +41,9 @@ define([
     getDates: function() {
       var result = [];
       var now = this.getNow();
-      var startDate = moment(this.options.startDate);
+      var startDate = this.options.startDate;
       _.times(this.options.days, function(i) {
-        var date = moment(startDate).add(i, 'days');
+        var date = moment(startDate).add(i + 1, 'days');
         result.push({
           index: i + 1,
           datetime: date.format(),
@@ -68,8 +68,8 @@ define([
 
     navigate: function(page) {
       var now = this.getNow();
-      var correctDate = _.isNaN(Number(page)) ? moment(this.options.startDate) : moment(this.options.startDate).add(Number(page) -1, 'days');
-      var startDate = moment(this.options.startDate);
+      var startDate = this.options.startDate;
+      var correctDate = _.isNaN(Number(page)) ? moment(startDate) : moment(startDate).add(Number(page) -1, 'days');
       if (correctDate.isAfter(now, 'hour') || now.isBefore(startDate, 'hour')) {
         window.location.hash = '';
       } else {
