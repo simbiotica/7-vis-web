@@ -13,7 +13,7 @@ define([
     el: '#navView',
 
     options: {
-      startDate: moment('2014-11-11 08:00+11:00', 'YYYY-MM-DD HH:mm Z'),
+      startDate: moment('2014-11-12 08:00+11:00', 'YYYY-MM-DD HH:mm Z'),
       days: 7
     },
 
