@@ -16,7 +16,8 @@ define([
       '2': 'http://simbiotica.github.io/wpc-twitter',
       '3': 'http://simbiotica.github.io/wpc-bio-data-hobby',
       '4': 'http://saleiva.github.io/EcoHack2012',
-      '5': 'http://dhakelila.github.io/blackSaturday'
+      '5': 'http://dhakelila.github.io/blackSaturday',
+      '6': 'http://osm2.cartodb.com/viz/ee3f60a6-68cc-11e4-b97b-0e018d66dc29/embed_map'
     },
 
     template: Handlebars.compile(TPL),
