@@ -136,7 +136,7 @@
         color $text-color-4-1
 
 // Theme 5
-.theme-5, .theme-6, .theme-7
+.theme-5, .theme-6
   background-color $bg-color-5-2
   color $text-color-5-1
   a
@@ -163,3 +163,44 @@
       background-color $bg-color-5-3
       a
         color $text-color-5-1
+
+// Theme 7
+.theme-7
+  background-color $bg-color-7-3
+  color $text-color-7-1
+  a
+    color $text-color-7-2
+  .l-header
+    background-color $bg-color-7-2
+  .m-main-nav
+    li
+      a
+        opacity .5
+        &:hover
+          opacity 1
+
+      &.is-disable a
+        color $text-color-7-2
+        opacity .5
+        &:hover
+          color $text-color-7-3
+          opacity 1
+      &.is-current
+        background-color $bg-color-7-3
+        a
+          color $text-color-7-3
+          opacity 1
+
+      &.is-enable:hover
+        background-color $bg-color-7-3
+
+
+  .m-second-nav
+    background-color $bg-color-7-2
+    a
+      color $text-color-7-1
+      opacity 1
+    li:hover
+      background-color $bg-color-7-3
+      a
+        color $text-color-7-4
